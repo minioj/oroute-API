@@ -13,14 +13,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController {
 
     /**
-    * @Author mini_oj
-    * @category 
-    * @Description //TODO
-    * @Date 2020-03-28 0:00
-    * @Param 
-    * @return 
-    **/
-    @ApiOperation(value="获取用户信息",tags={"获取用户信息copy"},notes="注意问题点")
+     * @return
+     * @Author mini_oj
+     * @category
+     * @Description
+     * @Date 2020-03-28 0:00
+     * @Param
+     **/
+    @ApiOperation(value = "首页", tags = {"首页展示接口"}, notes = "服务启动是否成功检测")
     @GetMapping(value = "/index")
     public ModelAndView index() {
         return new ModelAndView("index");
