@@ -1,0 +1,10 @@
+/*---------长宽高定义--------*/
+.width-180{width:180px;}
+
+body{background-color: #f1f1f1;cursor:pointer;}
+
+.mg-20{margin-top: 20px;}
+
+.width-p-80{width:80%;}
+
+input:invalid {border:2px solid red;}

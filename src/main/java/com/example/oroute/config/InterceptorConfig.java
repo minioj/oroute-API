@@ -32,6 +32,8 @@ public class InterceptorConfig extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(requestInterceptor()).addPathPatterns("/**")
                 .excludePathPatterns("/yxj/*").excludePathPatterns("/swagger-resources/**")
+                .excludePathPatterns("/**.css").excludePathPatterns("/**.js")
+                .excludePathPatterns("/**.png").excludePathPatterns("/**.jpg")
                 .excludePathPatterns("/webjars/**").excludePathPatterns("/**.html");
         super.addInterceptors(registry);
     }

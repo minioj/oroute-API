@@ -57,34 +57,34 @@ public class RequestInterceptor implements HandlerInterceptor {
         }
 
         // 请求头校验
-        if (authUserId == null || authPassword == null) {
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("code", "401");
-            map.put("msg", "当前请求未或授权，请检查！");
-            map.put("info", "Unauthorized");
-            Gson gson = new Gson();
-            response.getWriter().write(gson.toJson(map));
-            response.setHeader("Content-Type", "application/json;charset=utf-8");
-            response.setStatus(401);
-            return false;
-        } else {
-            boolean isAuthAccess = authService.userAuth(authUserId, authPassword);
-            if (isAuthAccess) {
-                // 认证成功
+//        if (authUserId == null || authPassword == null) {
+//            Map<String, Object> map = new HashMap<String, Object>();
+//            map.put("code", "401");
+//            map.put("msg", "当前请求未或授权，请检查！");
+//            map.put("info", "Unauthorized");
+//            Gson gson = new Gson();
+//            response.getWriter().write(gson.toJson(map));
+//            response.setHeader("Content-Type", "application/json;charset=utf-8");
+//            response.setStatus(401);
+//            return false;
+//        } else {
+//            boolean isAuthAccess = authService.userAuth(authUserId, authPassword);
+//            if (isAuthAccess) {
+//                // 认证成功
                 return true;
-            } else {
-                // 认证失败
-                Map<String, Object> map = new HashMap<String, Object>();
-                map.put("code", "401");
-                map.put("msg", "用户名或密码错误");
-                map.put("info", "Unauthorized");
-                Gson gson = new Gson();
-                response.getWriter().write(gson.toJson(map));
-                response.setHeader("Content-Type", "Application/json;charset=utf-8");
-                response.setStatus(401);
-                return false;
-            }
-        }
+//            } else {
+//                // 认证失败
+//                Map<String, Object> map = new HashMap<String, Object>();
+//                map.put("code", "401");
+//                map.put("msg", "用户名或密码错误");
+//                map.put("info", "Unauthorized");
+//                Gson gson = new Gson();
+//                response.getWriter().write(gson.toJson(map));
+//                response.setHeader("Content-Type", "Application/json;charset=utf-8");
+//                response.setStatus(401);
+//                return false;
+//            }
+//        }
     }
 
     //postHandler是在请求结束之后,视图渲染之前执行的,但只有preHandle方法返回true的时候才会执行
